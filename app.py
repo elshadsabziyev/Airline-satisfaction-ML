@@ -55,6 +55,8 @@ def load_translation_files() -> Dict[str, Dict[str, Any]]:
     if not LOCALES_DIR.exists():
         raise FileNotFoundError(f"Missing locales directory at {LOCALES_DIR}")
     for path in LOCALES_DIR.glob("*.json"):
+        if path.stem.endswith(DOC_LOCALE_SUFFIX):
+            continue
         with path.open("r", encoding="utf-8") as handle:
             translations[path.stem] = json.load(handle)
     return translations
