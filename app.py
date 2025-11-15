@@ -62,13 +62,19 @@ def load_registry() -> Dict:
         return json.load(f)
 
 
+def _resolve_artifact_path(raw_path: str) -> Path:
+    clean = raw_path.replace("\\", "/")
+    artifact = Path(clean)
+    if not artifact.is_absolute():
+        artifact = PROJECT_ROOT / artifact
+    return artifact
+
+
 @st.cache_resource(show_spinner=False)
 def load_models(registry: Dict) -> Dict[str, any]:
     loaded = {}
     for entry in registry.get("models", []):
-        artifact = Path(entry["artifact_path"])
-        if not artifact.is_absolute():
-            artifact = PROJECT_ROOT / artifact
+        artifact = _resolve_artifact_path(entry["artifact_path"])
         try:
             loaded[entry["name"]] = joblib.load(artifact)
         except FileNotFoundError:
