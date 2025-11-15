@@ -1,0 +1,305 @@
+{
+  "meta": {
+    "language_name": "English"
+  },
+  "sections": [
+    {
+      "type": "markdown",
+      "level": "header",
+      "title": "Documentation Hub",
+      "body": [
+        "This hub explains the machine-learning, data-science, and programming concepts that power the Passenger Experience Studio.",
+        "Use the sidebar to switch locales; if a documentation locale is missing, we fall back to English automatically.",
+        "Historic satisfaction currently sits at **{base_rate_pct}**, so every prediction is compared against that anchor."
+      ]
+    },
+    {
+      "type": "table",
+      "level": "subheader",
+      "title": "Model lineup",
+      "caption": "Why we train multiple algorithms and how each one interprets the airline survey.",
+      "columns": [
+        {"key": "model", "label": "Model"},
+        {"key": "captures", "label": "What it captures"},
+        {"key": "airline_example", "label": "Airline example"},
+        {"key": "best_when", "label": "Best when"}
+      ],
+      "rows": [
+        {
+          "model": "Logistic Regression",
+          "captures": "Learns one weight per feature to estimate the odds of a satisfied passenger.",
+          "airline_example": "If Seat comfort rises from 2→4, the odds jump by ~8 percentage points because of its positive weight.",
+          "best_when": "You want explainable coefficients and dependable lift charts for CX leadership."
+        },
+        {
+          "model": "Linear Regression",
+          "captures": "Treats satisfaction like a continuous score to surface gradual sentiment drifts.",
+          "airline_example": "A 300-mile distance increase can shave a few points when long-haul fatigue drives lower ratings.",
+          "best_when": "Looking for early warning signs before passengers flip to neutral/dissatisfied."
+        },
+        {
+          "model": "Polynomial Regression",
+          "captures": "Adds interaction terms so curved relationships emerge between touchpoints.",
+          "airline_example": "Shows Seat comfort only matters when Leg room service already scores ≥4, mirroring premium-cabin expectations.",
+          "best_when": "Investigating paired experiences (e.g., catering × cabin) for premium journeys."
+        },
+        {
+          "model": "Decision Tree",
+          "captures": "Splits travelers into rule-based paths such as delays >20 minutes.",
+          "airline_example": "Passengers with Arrival delay >25 and Food & drink <3 rarely stay satisfied—perfect for ops triage.",
+          "best_when": "Needing human-readable playbooks for service agents."
+        },
+        {
+          "model": "K-Nearest Neighbors",
+          "captures": "Looks up the most similar past flyers and averages their satisfaction outcomes.",
+          "airline_example": "If five similar corporate travelers loved the Wi-Fi, the next corporate traveler inherits their optimism.",
+          "best_when": "Segment volumes are large and you want fast similarity-based what-if checks."
+        },
+        {
+          "model": "Calibrated Linear SVM",
+          "captures": "Maximizes the margin between satisfied vs. neutral travelers, then calibrates scores into honest probabilities.",
+          "airline_example": "Flags that even a slight Gate location issue can push a borderline traveler below the satisfaction threshold.",
+          "best_when": "You need rock-solid ranking performance for large marketing batches."
+        }
+      ],
+      "expander": {
+        "title": "Why multiple models?",
+        "body": [
+          "Different passengers exhibit linear, non-linear, and rule-based behaviors. Keeping the full bench lets us compare perspectives, promote the top performer, and still inspect challengers when drift appears.",
+          "The stack also improves trust—operations teams can read tree rules while data scientists monitor calibrated probabilities."
+        ]
+      }
+    },
+    {
+      "type": "table",
+      "title": "Score glossary",
+      "caption": "Every metric shown in the analytics lab plus an airline-specific interpretation.",
+      "columns": [
+        {"key": "metric", "label": "Metric"},
+        {"key": "meaning", "label": "What it means"},
+        {"key": "airline_example", "label": "Airline example"},
+        {"key": "operational_use", "label": "Operational use"},
+        {"key": "red_flag", "label": "Red flag"}
+      ],
+      "rows": [
+        {
+          "metric": "Accuracy",
+          "meaning": "Share of travelers classified correctly.",
+          "airline_example": "920 of 1,000 itineraries labeled correctly ⇒ 92% accuracy.",
+          "operational_use": "Quick health check when presenting to executives.",
+          "red_flag": "Can hide minority-class issues if neutral flyers dominate."
+        },
+        {
+          "metric": "Precision",
+          "meaning": "Of the travelers we call satisfied, how many truly were?",
+          "airline_example": "We send 100 loyalty perks and 87 recipients were genuinely happy ⇒ 0.87 precision.",
+          "operational_use": "Prevents over-spending perks on passengers who were actually neutral.",
+          "red_flag": "Low precision wastes vouchers and erodes trust in automation."
+        },
+        {
+          "metric": "Recall",
+          "meaning": "Of all truly satisfied travelers, how many did we capture?",
+          "airline_example": "700 happy flyers existed but we only flagged 630 ⇒ 0.90 recall.",
+          "operational_use": "Ensure promoters enter referral programs.",
+          "red_flag": "Low recall misses word-of-mouth leverage."
+        },
+        {
+          "metric": "F1",
+          "meaning": "Harmonic mean of precision and recall.",
+          "airline_example": "Precision 0.84 + Recall 0.88 ⇒ F1 ≈ 0.86 for the decision tree.",
+          "operational_use": "Single score balancing false alarms vs. misses.",
+          "red_flag": "If F1 < 0.8, investigate both precision and recall before deployment."
+        },
+        {
+          "metric": "ROC AUC",
+          "meaning": "Probability a satisfied traveler ranks above a neutral traveler.",
+          "airline_example": "AUC 0.94 ⇒ a delighted long-haul passenger outscores a delayed passenger 94% of the time.",
+          "operational_use": "Stable comparison metric even when label balance shifts.",
+          "red_flag": "AUC < 0.85 suggests feature drift or data quality issues."
+        },
+        {
+          "metric": "R²",
+          "meaning": "For regression models, fraction of satisfaction variance explained by features.",
+          "airline_example": "R² = 0.61 ⇒ seat, service, and delay inputs explain 61% of rating swings.",
+          "operational_use": "Communicate how much sentiment is predictable vs. noise.",
+          "red_flag": "Low R² means qualitative research should complement the model."
+        },
+        {
+          "metric": "Lift vs. base rate",
+          "meaning": "Prediction minus historic satisfaction (base).",
+          "airline_example": "Base {base_rate_pct}; prediction 84% ⇒ +12 percentage points lift.",
+          "operational_use": "Sort passengers by urgency for outreach.",
+          "red_flag": "Negative lift indicates immediate recovery outreach."
+        },
+        {
+          "metric": "Probability",
+          "meaning": "Model confidence that this traveler lands satisfied (0–100%).",
+          "airline_example": "0.42 probability for a weather-delayed trip signals churn risk.",
+          "operational_use": "Drive conditional workflows (e.g., <0.5 triggers apology vouchers).",
+          "red_flag": "Near 0.5 indicates borderline experiences—double-check manual notes."
+        },
+        {
+          "metric": "Confusion matrix",
+          "meaning": "2×2 table of true vs. predicted labels.",
+          "airline_example": "45 travelers in the True Neutral / Predicted Satisfied cell = wasted perk budget.",
+          "operational_use": "Diagnose whether we suffer more false alarms or missed promoters.",
+          "red_flag": "Asymmetry hints that thresholds or features require tuning."
+        },
+        {
+          "metric": "Cross-validation mean ± std",
+          "meaning": "Average metric across folds plus variability.",
+          "airline_example": "Precision 0.88 ± 0.02 ⇒ every fold stayed tight around 88%.",
+          "operational_use": "Validates that routes/seasons behave similarly.",
+          "red_flag": "Std > 0.05 implies instability across subsets."
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "table",
+      "title": "Survey parameter quick reference",
+      "caption": "Reference values come from cleaned training data and a representative {route_example} flight.",
+      "columns": [
+        {"key": "parameter", "label": "Parameter"},
+        {"key": "range", "label": "Range / Type"},
+        {"key": "meaning", "label": "Meaning"},
+        {"key": "example", "label": "Airline example"}
+      ],
+      "rows": [
+        {
+          "parameter": "Seat comfort",
+          "range": "Slider 0-5",
+          "meaning": "Traveler perception of cushioning, recline, and legroom feel.",
+          "example": "Keeping Seat comfort ≥4 offsets minor delays for premium cabins. Dropping to 2 quickly erodes loyalty intent."
+        },
+        {
+          "parameter": "Inflight Wi-Fi service",
+          "range": "Slider 0-5",
+          "meaning": "Connectivity quality for work and streaming.",
+          "example": "Corporate travelers rate Wi-Fi 5/5 on red-eyes—downtime here triggers immediate recovery messaging."
+        },
+        {
+          "parameter": "Food and drink",
+          "range": "Slider 0-5",
+          "meaning": "Catering taste, freshness, and dietary coverage.",
+          "example": "Scores below 3 after long delays double the chance of churn for family itineraries."
+        },
+        {
+          "parameter": "Gate location",
+          "range": "Slider 0-5",
+          "meaning": "Ease of reaching the gate plus wayfinding clarity.",
+          "example": "A far-away gate rated 2 becomes the deciding factor when Arrival delay already exceeds {arrival_delay_median} minutes."
+        },
+        {
+          "parameter": "Departure Delay in Minutes",
+          "range": "Minutes",
+          "meaning": "Gap between scheduled and actual pushback.",
+          "example": "Keeping this near {departure_delay_median} maintains baseline satisfaction; >20 minutes pushes passengers into service-recovery workflows."
+        },
+        {
+          "parameter": "Arrival Delay in Minutes",
+          "range": "Minutes",
+          "meaning": "Gap between scheduled and actual arrival.",
+          "example": "When arrival delay exceeds {arrival_delay_median} by 15 minutes, decision tree rules predict churn unless crew service was perfect."
+        },
+        {
+          "parameter": "Flight Distance",
+          "range": "Miles",
+          "meaning": "Great-circle distance for the itinerary.",
+          "example": "Setting distance to {distance_default} miles models a mid-haul trip; 4,000-mile journeys amplify importance of comfort and Wi-Fi."
+        },
+        {
+          "parameter": "Class",
+          "range": "Choice",
+          "meaning": "Cabin (Business, Eco, Eco Plus).",
+          "example": "Eco Plus passengers tolerate slightly longer delays but expect food & drink ≥4; the model mirrors that behavior."
+        },
+        {
+          "parameter": "Customer Type",
+          "range": "Choice",
+          "meaning": "Loyal vs. disloyal traveler relationship.",
+          "example": "Loyal travelers scoring Check-in service <3 trigger targeted apology credits to protect lifetime value."
+        },
+        {
+          "parameter": "Type of Travel",
+          "range": "Choice",
+          "meaning": "Business vs. personal itinerary context.",
+          "example": "Business travelers react strongly to Wi-Fi dips, while personal trips care more about baggage handling."
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "markdown",
+      "title": "Data & feature engineering blueprint",
+      "body": [
+        "**Train/Test split (80/20)** — `data/train.csv` feeds fitting; `data/test.csv` stays untouched until evaluation.",
+        "Example: a Boston→San Francisco test itinerary is never seen during training, so its score mirrors live deployment.",
+        "**Cleaning & encoding** — `clean_frame` standardizes column names, fills gaps, and one-hot encodes cabin/class flags.",
+        "Example: \"Eco Plus\" becomes its own binary feature so models learn its premium bump independently of Business.",
+        "**Feature scaling** — numeric sliders are standardized so SVM and KNN remain stable even when miles dwarf minutes.",
+        "**Calibrated probabilities** — Linear SVM margins flow through calibration so users get honest 0–1 probabilities.",
+        "**Global feature rank** — registry aggregates normalized importances across every model to detect universal drivers."
+      ]
+    },
+    {
+      "type": "markdown",
+      "title": "Programming architecture highlights",
+      "body": [
+        "**scikit-learn pipelines + joblib** — preprocessing + estimators persist in `artifacts/models` for reproducibility.",
+        "**Model registry** — `artifacts/model_registry.json` stores metrics, confusion matrices, and artifact paths for dynamic loading.",
+        "**Streamlit session state** — passenger responses live in `st.session_state.responses`, so wizard steps never lose data.",
+        "**Caching** — `@st.cache_data` / `@st.cache_resource` avoid repetitive CSV reads or model loads.",
+        "**Localization files** — UI strings sit in `locales/*.json`, enabling language switches without touching code."
+      ]
+    },
+    {
+      "type": "list",
+      "title": "Personalized drivers & suggestions",
+      "items": [
+        "Logistic-regression coefficients quantify how far each slider pushes log-odds of satisfaction.",
+        "We compare responses against survey medians to decide if a traveler is above or below typical experience.",
+        "Negative impacts receive Noticeable / Major / Critical tags that map directly to service-recovery playbooks.",
+        "Segment-aware templates (e.g., business vs. leisure) ensure recommendations stay contextual."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "body": [
+        "Historical base rate: **{base_rate_pct}**.",
+        "Lift is simply prediction minus base, so +12 percentage points means the traveler looks more promising than average."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "success",
+      "body": [
+        "Worked example: A {age_default}-year-old {customer_type_default} traveler flying {travel_type_default} in {class_default} over {distance_default} miles.",
+        "If Gate location = 4/5 but Arrival delay = {arrival_delay_median} minutes, the decision tree still predicts satisfaction unless Wi-Fi dips below 3/5."
+      ]
+    },
+    {
+      "type": "markdown",
+      "title": "Reading the confusion matrix",
+      "body": [
+        "True Satisfied / Predicted Neutral counts highlight missed promoters—if that cell rises, prioritize models with better recall.",
+        "Predicted Satisfied / True Neutral counts reveal over-optimistic calls that waste loyalty perks.",
+        "Balanced diagonals mean the threshold is well calibrated for current routes."
+      ]
+    },
+    {
+      "type": "markdown",
+      "title": "Cross-validation comfort check",
+      "body": [
+        "We log mean ± standard deviation for every metric across folds.",
+        "Std > 0.05 suggests instability across routes or seasons—retrain with route-specific features or revisit scaling.",
+        "Tight std values prove the model generalizes before we deploy to Streamlit Cloud."
+      ]
+    }
+  ]
+}

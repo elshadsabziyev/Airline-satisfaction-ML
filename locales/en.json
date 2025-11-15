@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "language_name": "English"
+  },
+  "app": {
+    "page_title": "Passenger Experience Studio",
+    "page_icon": "✈️",
+    "tagline": "Guided intake captures each touchpoint, then multiple models forecast satisfaction with audit-ready transparency.",
+    "wizard_only_note": "Use the sidebar to jump between the passenger wizard, analytics lab, and the documentation hub."
+  },
+  "sidebar": {
+    "language_label": "Language",
+    "navigation_label": "Go to section",
+    "page_labels": {
+      "wizard": "Passenger Wizard",
+      "analytics": "Insights & Diagnostics",
+      "documentation": "Documentation Hub"
+    },
+    "model_selector": "Model for scoring",
+    "model_selector_help": "Switch between pipelines to see how predictions change.",
+    "base_rate": "Training base rate",
+    "best_model": "Registry champion",
+    "no_models_error": "No trained models loaded. Train them first."
+  },
+  "wizard": {
+    "heading": "Passenger journey wizard",
+    "progress_caption": "Complete every step to unlock modeling.",
+    "sections": {
+      "trip_basics": {
+        "label": "Trip basics",
+        "description": "Capture traveler profile, loyalty status, and cabin context."
+      },
+      "experience": {
+        "label": "Onboard experience",
+        "description": "Score each inflight touchpoint from 0 (not applicable) to 5 (delighted)."
+      },
+      "operations": {
+        "label": "Ops & service",
+        "description": "Track delays and ground services that shape satisfaction."
+      }
+    },
+    "expander_label": "Current responses",
+    "back_button": "◀ Back",
+    "next_button": "Next ▶",
+    "generate_button": "Generate satisfaction score",
+    "loading_message": "Scoring across selected pipeline...",
+    "score_message": "{emoji} {model} projects **{probability:.1%}** chance of a {label} traveler.",
+    "lift_label": "Lift vs. base rate",
+    "lift_help": "Positive lift means this traveler is more likely to be satisfied than the historic average.",
+    "nba_prefix": "Next best action",
+    "agreement_heading": "Model agreement",
+    "drivers_title": "Top personalized drivers",
+    "drivers_explainer": "We blend logistic-regression coefficients with deviations from survey medians to estimate influence.",
+    "suggestions_heading": "Ops cockpit recommendations",
+    "ground_section_title": "Ground & baggage service",
+    "progress_help": "Use Next/Back to move between sections.",
+    "responses_help": "Review or copy the structured answers captured so far.",
+    "why_drivers": "We project influence by blending logistic-regression coefficients with how far each response deviates from the survey median.",
+    "model_chart_title": "How each model scored this traveler",
+    "model_chart_help": "Bars reflect the predicted satisfaction probability, sorted from most optimistic to least."
+  },
+  "analytics": {
+    "title": "Insights & diagnostics",
+    "model_section_title": "Model diagnostics",
+    "dataset_label": "Dataset",
+    "model_dropdown": "Inspect model",
+    "chart_title": "{dataset} metrics",
+    "compare_label": "Compare models",
+    "comparison_help": "Select multiple pipelines to compare headline metrics side by side.",
+    "confusion_title": "{model} confusion matrix ({dataset})",
+    "cv_expander": "Cross-validation (mean ± std)",
+    "global_section_title": "Global signals",
+    "best_model_label": "Best model",
+    "global_table_empty": "Train models to see feature rankings.",
+    "data_dictionary_title": "Data dictionary",
+    "data_dictionary_lines": [
+      "Service sliders use a 0-5 Likert scale where 5 = delighted.",
+      "Cabin class options follow airline inventory: Business, Eco, Eco Plus.",
+      "Satisfaction label is binary: 1 = satisfied, 0 = neutral/dissatisfied."
+    ],
+    "metrics_help": "Accuracy/precision/recall/F1/R² reflect the selected holdout dataset.",
+    "global_help": "Normalized impacts aggregate top weights across every trained model."
+  },
+  "datasets": {
+    "train": "Train",
+    "test": "Test"
+  },
+  "messages": {
+    "registry_missing": "Model registry missing. Run src/models/train_models.py first.",
+    "artifact_missing": "Missing artifact for {model} at {path}",
+    "scoring_error": "Unable to score—no models were loaded.",
+    "no_models": "No trained models loaded. Train them first."
+  },
+  "probability_labels": {
+    "satisfied": "satisfied",
+    "neutral": "neutral / dissatisfied"
+  },
+  "metrics": {
+    "accuracy": "Accuracy",
+    "precision": "Precision",
+    "recall": "Recall",
+    "f1": "F1",
+    "roc_auc": "ROC AUC",
+    "r2": "R²"
+  },
+  "confusion_axes": {
+    "predicted": "Predicted",
+    "actual": "Actual",
+    "neutral": "Neutral",
+    "satisfied": "Satisfied"
+  },
+  "next_best_action": {
+    "success": "Celebrate the advocate—surprise-and-delight perks or loyalty nudges will reinforce satisfaction.",
+    "info": "Solid but fragile sentiment—reinforce digital touchpoints and follow up with a post-trip survey.",
+    "warning": "High churn risk—trigger service recovery workflow and contact the passenger proactively."
+  },
+  "inputs": {
+    "gender": {
+      "label": "Passenger gender",
+      "help": "Self-reported gender used only for fairness checks."
+    },
+    "customer_type": {
+      "label": "Customer tenure",
+      "help": "Relationship with the airline (loyal vs. disloyal)."
+    },
+    "type_of_travel": {
+      "label": "Travel purpose",
+      "help": "Business vs. personal itinerary context."
+    },
+    "age": {
+      "label": "Age",
+      "help": "Passenger age in years."
+    },
+    "class": {
+      "label": "Cabin class",
+      "help": "Ticketed cabin for the main flight segment."
+    },
+    "flight_distance": {
+      "label": "Flight distance (miles)",
+      "help": "Total distance flown for this itinerary."
+    },
+    "ground_section": {
+      "label": "Ground & baggage service",
+      "help": "Ratings for baggage handling and check-in."
+    }
+  },
+  "features": {
+    "inflight_wifi_service": {
+      "label": "Inflight Wi-Fi service",
+      "help": "Connectivity quality rating (0-5)."
+    },
+    "departure_arrival_time_convenient": {
+      "label": "Departure/Arrival time convenient",
+      "help": "Schedule convenience score."
+    },
+    "ease_of_online_booking": {
+      "label": "Ease of online booking",
+      "help": "Digital purchase flow simplicity."
+    },
+    "gate_location": {
+      "label": "Gate location",
+      "help": "Proximity and clarity of assigned gate."
+    },
+    "food_and_drink": {
+      "label": "Food and drink",
+      "help": "Catering satisfaction."
+    },
+    "online_boarding": {
+      "label": "Online boarding",
+      "help": "Check-in / boarding pass experience."
+    },
+    "seat_comfort": {
+      "label": "Seat comfort",
+      "help": "Legroom, cushioning, recline satisfaction."
+    },
+    "inflight_entertainment": {
+      "label": "Inflight entertainment",
+      "help": "Content variety and hardware quality."
+    },
+    "on_board_service": {
+      "label": "On-board service",
+      "help": "Crew attentiveness and professionalism."
+    },
+    "leg_room_service": {
+      "label": "Leg room service",
+      "help": "Dedicated legroom assistance or upgrades."
+    },
+    "baggage_handling": {
+      "label": "Baggage handling",
+      "help": "Speed and accuracy of baggage delivery."
+    },
+    "checkin_service": {
+      "label": "Check-in service",
+      "help": "Airport counter or kiosk experience."
+    },
+    "inflight_service": {
+      "label": "Inflight service",
+      "help": "Overall inflight service composite."
+    },
+    "cleanliness": {
+      "label": "Cleanliness",
+      "help": "Cabin cleanliness perception."
+    },
+    "departure_delay_in_minutes": {
+      "label": "Departure delay (minutes)",
+      "help": "Minutes delayed at departure."
+    },
+    "arrival_delay_in_minutes": {
+      "label": "Arrival delay (minutes)",
+      "help": "Minutes delayed upon arrival."
+    }
+  },
+  "operations": {
+    "departure_delay_in_minutes": {
+      "label": "Departure delay (minutes)",
+      "help": "Minutes between scheduled and actual pushback."
+    },
+    "arrival_delay_in_minutes": {
+      "label": "Arrival delay (minutes)",
+      "help": "Minutes between scheduled and actual arrival."
+    }
+  },
+  "suggestions": {
+    "severity": {
+      "critical": "Critical",
+      "major": "Major",
+      "noticeable": "Noticeable"
+    },
+    "templates": {
+      "service": "{severity} drag on **{feature}** ({value}/5). Invest in coaching, staffing, or product tweaks to lift this touchpoint.",
+      "delay": "{severity} delay risk: **{feature}** at {value} min. Align ops control and gate teams to reduce turnaround times.",
+      "segment": "{severity} friction for **{feature} = {value}**. Adjust targeting or perks for this traveler segment.",
+      "gender": "{severity} sentiment gap detected across gender expression ({value}). Ensure comms and service scripts stay inclusive.",
+      "generic": "{severity} headwind on **{feature}** (response: {value}). Review qualitative feedback to diagnose root causes."
+    },
+    "recovery_action": "Activate service-recovery playbook (personal outreach, vouchers, proactive updates).",
+    "promoter_action": "Leverage promoter energy—invite the traveler to referral or loyalty-upgrade campaigns.",
+    "no_action": "Maintain current service blueprint—passenger signaled no urgent friction points."
+  }
+}

@@ -17,6 +17,7 @@ from sklearn.metrics import (
     confusion_matrix,
     f1_score,
     precision_score,
+    r2_score,
     recall_score,
     roc_auc_score,
 )
@@ -132,6 +133,10 @@ def evaluate_predictions(y_true: np.ndarray, y_pred: np.ndarray, y_score: np.nda
         metrics["roc_auc"] = float(roc_auc_score(y_true, y_score))
     except ValueError:
         metrics["roc_auc"] = float("nan")
+    try:
+        metrics["r2"] = float(r2_score(y_true, y_score))
+    except ValueError:
+        metrics["r2"] = float("nan")
     return metrics
 
 
