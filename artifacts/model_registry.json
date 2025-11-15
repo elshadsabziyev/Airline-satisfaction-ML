@@ -1,0 +1,1002 @@
+{
+  "base_rate": 0.43333269171542965,
+  "models": [
+    {
+      "name": "logistic_regression",
+      "type": "LogisticRegression",
+      "metrics": {
+        "train": {
+          "accuracy": 0.8693601786264243,
+          "precision": 0.8433590253062294,
+          "recall": 0.8578567462520822,
+          "f1": 0.8505461111600457,
+          "roc_auc": 0.9267631212994353
+        },
+        "test": {
+          "accuracy": 0.8662611641515244,
+          "precision": 0.8425645899939515,
+          "recall": 0.8551258440761204,
+          "f1": 0.8487987465181058,
+          "roc_auc": 0.9256598364291279
+        }
+      },
+      "cv_metrics": {
+        "mean": {
+          "accuracy": 0.8692158093623965,
+          "precision": 0.8433526317067936,
+          "recall": 0.8575013881177125,
+          "f1": 0.8503560369511574,
+          "roc_auc": 0.9266559578065392
+        },
+        "std": {
+          "accuracy": 0.0023275543254221084,
+          "precision": 0.00457689570603963,
+          "recall": 0.0033553834479549192,
+          "f1": 0.0024194757526930176,
+          "roc_auc": 0.0018973623709437298
+        }
+      },
+      "confusion_matrices": {
+        "train": [
+          [
+            51705,
+            7174
+          ],
+          [
+            6400,
+            38625
+          ]
+        ],
+        "test": [
+          [
+            12751,
+            1822
+          ],
+          [
+            1652,
+            9751
+          ]
+        ]
+      },
+      "feature_importances": [
+        {
+          "feature": "Type of Travel_Personal Travel",
+          "importance": 0.14823369832013372,
+          "weight": -1.5880965987615205,
+          "direction": -1.0
+        },
+        {
+          "feature": "Customer Type_disloyal Customer",
+          "importance": 0.11780922636685581,
+          "weight": -1.2621450710342161,
+          "direction": -1.0
+        },
+        {
+          "feature": "Type of Travel_Business travel",
+          "importance": 0.098466582507934,
+          "weight": 1.0549183252164813,
+          "direction": 1.0
+        },
+        {
+          "feature": "Online boarding",
+          "importance": 0.07255909102242741,
+          "weight": 0.7773593114642908,
+          "direction": 1.0
+        },
+        {
+          "feature": "Customer Type_Loyal Customer",
+          "importance": 0.0680421105546564,
+          "weight": 0.7289667974891804,
+          "direction": 1.0
+        },
+        {
+          "feature": "Inflight wifi service",
+          "importance": 0.05242147682123909,
+          "weight": 0.5616156783869317,
+          "direction": 1.0
+        },
+        {
+          "feature": "Class_Eco Plus",
+          "importance": 0.047364869684745105,
+          "weight": -0.5074418927650114,
+          "direction": -1.0
+        },
+        {
+          "feature": "Checkin service",
+          "importance": 0.03694930565527263,
+          "weight": 0.39585510786495864,
+          "direction": 1.0
+        },
+        {
+          "feature": "Class_Eco",
+          "importance": 0.03627022073932918,
+          "weight": -0.3885797551111539,
+          "direction": -1.0
+        },
+        {
+          "feature": "On-board service",
+          "importance": 0.03472954374665864,
+          "weight": 0.37207376545038134,
+          "direction": 1.0
+        },
+        {
+          "feature": "Class_Business",
+          "importance": 0.03386797461187466,
+          "weight": 0.36284337433112723,
+          "direction": 1.0
+        },
+        {
+          "feature": "Arrival Delay in Minutes",
+          "importance": 0.03113563863656515,
+          "weight": -0.3335705873856679,
+          "direction": -1.0
+        },
+        {
+          "feature": "Leg room service",
+          "importance": 0.03003872545350528,
+          "weight": 0.3218188459470112,
+          "direction": 1.0
+        },
+        {
+          "feature": "Gender_Female",
+          "importance": 0.026627096895090876,
+          "weight": -0.28526848141279726,
+          "direction": -1.0
+        },
+        {
+          "feature": "Cleanliness",
+          "importance": 0.02548012807861618,
+          "weight": 0.2729804706772411,
+          "direction": 1.0
+        },
+        {
+          "feature": "Gender_Male",
+          "importance": 0.02314001891710856,
+          "weight": -0.24790979213223882,
+          "direction": -1.0
+        },
+        {
+          "feature": "Ease of Online booking",
+          "importance": 0.02217237920765184,
+          "weight": -0.2375430175807731,
+          "direction": -1.0
+        },
+        {
+          "feature": "Departure/Arrival time convenient",
+          "importance": 0.017242460279079243,
+          "weight": -0.1847265016916004,
+          "direction": -1.0
+        },
+        {
+          "feature": "Departure Delay in Minutes",
+          "importance": 0.014430229803359021,
+          "weight": 0.15459776777996612,
+          "direction": 1.0
+        },
+        {
+          "feature": "Baggage handling",
+          "importance": 0.01387363987485857,
+          "weight": 0.14863476083637947,
+          "direction": 1.0
+        }
+      ],
+      "artifact_path": "artifacts\\models\\logistic_regression.joblib"
+    },
+    {
+      "name": "linear_regression",
+      "type": "LinearRegression",
+      "metrics": {
+        "train": {
+          "accuracy": 0.8721512165075455,
+          "precision": 0.8653514123253297,
+          "recall": 0.8348695169350361,
+          "f1": 0.8498372219207814,
+          "roc_auc": 0.9252952527953813
+        },
+        "test": {
+          "accuracy": 0.8679935324915307,
+          "precision": 0.8629164391043146,
+          "recall": 0.831360168376743,
+          "f1": 0.8468444325338336,
+          "roc_auc": 0.9242128337499972
+        }
+      },
+      "cv_metrics": {
+        "mean": {
+          "accuracy": 0.8718335879942156,
+          "precision": 0.8649569120849009,
+          "recall": 0.8345585785674625,
+          "f1": 0.8494731387022354,
+          "roc_auc": 0.925228388556165
+        },
+        "std": {
+          "accuracy": 0.0025857380810751364,
+          "precision": 0.004663334317724965,
+          "recall": 0.004218942589015116,
+          "f1": 0.002962989597155666,
+          "roc_auc": 0.0021219749648975425
+        }
+      },
+      "confusion_matrices": {
+        "train": [
+          [
+            53030,
+            5849
+          ],
+          [
+            7435,
+            37590
+          ]
+        ],
+        "test": [
+          [
+            13067,
+            1506
+          ],
+          [
+            1923,
+            9480
+          ]
+        ]
+      },
+      "feature_importances": [
+        {
+          "feature": "Type of Travel_Personal Travel",
+          "importance": 0.1291733979451895,
+          "weight": -0.19031241105541077,
+          "direction": -1.0
+        },
+        {
+          "feature": "Type of Travel_Business travel",
+          "importance": 0.12917339794518531,
+          "weight": 0.19031241105540458,
+          "direction": 1.0
+        },
+        {
+          "feature": "Customer Type_Loyal Customer",
+          "importance": 0.10466239713672253,
+          "weight": 0.15420011753798077,
+          "direction": 1.0
+        },
+        {
+          "feature": "Customer Type_disloyal Customer",
+          "importance": 0.10466239713671772,
+          "weight": -0.1542001175379737,
+          "direction": -1.0
+        },
+        {
+          "feature": "Online boarding",
+          "importance": 0.07282322873375605,
+          "weight": 0.10729116413769238,
+          "direction": 1.0
+        },
+        {
+          "feature": "Class_Business",
+          "importance": 0.06121371344631041,
+          "weight": 0.09018675347199222,
+          "direction": 1.0
+        },
+        {
+          "feature": "Inflight wifi service",
+          "importance": 0.06061368229847953,
+          "weight": 0.08930272180395098,
+          "direction": 1.0
+        },
+        {
+          "feature": "Ease of Online booking",
+          "importance": 0.03831210786198504,
+          "weight": -0.056445597435805954,
+          "direction": -1.0
+        },
+        {
+          "feature": "Class_Eco Plus",
+          "importance": 0.03567448720043357,
+          "weight": -0.0525595655164287,
+          "direction": -1.0
+        },
+        {
+          "feature": "Checkin service",
+          "importance": 0.03169400887089051,
+          "weight": 0.046695088463881165,
+          "direction": 1.0
+        },
+        {
+          "feature": "On-board service",
+          "importance": 0.030372862228184288,
+          "weight": 0.04474863039332806,
+          "direction": 1.0
+        },
+        {
+          "feature": "Leg room service",
+          "importance": 0.0294657677011738,
+          "weight": 0.043412199291904346,
+          "direction": 1.0
+        },
+        {
+          "feature": "Arrival Delay in Minutes",
+          "importance": 0.02562005804231488,
+          "weight": -0.037746278219617665,
+          "direction": -1.0
+        },
+        {
+          "feature": "Class_Eco",
+          "importance": 0.025539226245864594,
+          "weight": -0.03762718795554548,
+          "direction": -1.0
+        },
+        {
+          "feature": "Cleanliness",
+          "importance": 0.02230292624674503,
+          "weight": 0.03285911600320427,
+          "direction": 1.0
+        },
+        {
+          "feature": "Departure/Arrival time convenient",
+          "importance": 0.01672180512286635,
+          "weight": -0.024636396508526837,
+          "direction": -1.0
+        },
+        {
+          "feature": "Inflight entertainment",
+          "importance": 0.014709996690804342,
+          "weight": 0.021672379773054837,
+          "direction": 1.0
+        },
+        {
+          "feature": "Baggage handling",
+          "importance": 0.013277005600562714,
+          "weight": 0.019561140200952506,
+          "direction": 1.0
+        },
+        {
+          "feature": "Departure Delay in Minutes",
+          "importance": 0.012454550207263104,
+          "weight": 0.018349408750249395,
+          "direction": 1.0
+        },
+        {
+          "feature": "Inflight service",
+          "importance": 0.011341829576505088,
+          "weight": 0.016710026730117733,
+          "direction": 1.0
+        }
+      ],
+      "artifact_path": "artifacts\\models\\linear_regression.joblib"
+    },
+    {
+      "name": "polynomial_regression",
+      "type": "LinearRegression",
+      "metrics": {
+        "train": {
+          "accuracy": 0.9336599168463197,
+          "precision": 0.9512876349176292,
+          "recall": 0.8926152137701278,
+          "f1": 0.9210179551522235,
+          "roc_auc": 0.9815247066658008
+        },
+        "test": {
+          "accuracy": 0.9330150908530952,
+          "precision": 0.9490658983176875,
+          "recall": 0.8954661054108568,
+          "f1": 0.9214872303943688,
+          "roc_auc": 0.9812325214220721
+        }
+      },
+      "cv_metrics": {
+        "mean": {
+          "accuracy": 0.932764830297017,
+          "precision": 0.9502428571010512,
+          "recall": 0.8915269294836202,
+          "f1": 0.9199418649092935,
+          "roc_auc": 0.9810782399449687
+        },
+        "std": {
+          "accuracy": 0.0023890236017094692,
+          "precision": 0.002166921609492364,
+          "recall": 0.004936093496078546,
+          "f1": 0.002991914847294975,
+          "roc_auc": 0.0012812385384737138
+        }
+      },
+      "confusion_matrices": {
+        "train": [
+          [
+            56821,
+            2058
+          ],
+          [
+            4835,
+            40190
+          ]
+        ],
+        "test": [
+          [
+            14025,
+            548
+          ],
+          [
+            1192,
+            10211
+          ]
+        ]
+      },
+      "feature_importances": [
+        {
+          "feature": "cat__Customer Type_Loyal Customer cat__Type of Travel_Business travel",
+          "importance": 0.030621391277559085,
+          "weight": 0.13947389808550903,
+          "direction": 1.0
+        },
+        {
+          "feature": "num__Inflight wifi service^2",
+          "importance": 0.025108750617540497,
+          "weight": 0.11436499710095668,
+          "direction": 1.0
+        },
+        {
+          "feature": "cat__Customer Type_Loyal Customer cat__Type of Travel_Personal Travel",
+          "importance": 0.023457054609967953,
+          "weight": -0.10684187450537297,
+          "direction": -1.0
+        },
+        {
+          "feature": "cat__Customer Type_disloyal Customer cat__Type of Travel_Business travel",
+          "importance": 0.023332739275420837,
+          "weight": -0.10627564470399235,
+          "direction": -1.0
+        },
+        {
+          "feature": "cat__Customer Type_disloyal Customer num__Inflight wifi service",
+          "importance": 0.022890020967596028,
+          "weight": 0.10425915735413772,
+          "direction": 1.0
+        },
+        {
+          "feature": "cat__Type of Travel_Personal Travel num__Inflight wifi service",
+          "importance": 0.017214785683539274,
+          "weight": 0.0784096725790974,
+          "direction": 1.0
+        },
+        {
+          "feature": "cat__Customer Type_disloyal Customer cat__Type of Travel_Personal Travel",
+          "importance": 0.016168402607829802,
+          "weight": 0.07364362112385672,
+          "direction": 1.0
+        },
+        {
+          "feature": "num__Inflight wifi service",
+          "importance": 0.012671215771506102,
+          "weight": 0.05771468190701404,
+          "direction": 1.0
+        },
+        {
+          "feature": "num__Online boarding^2",
+          "importance": 0.012184066446790558,
+          "weight": 0.055495820763444975,
+          "direction": 1.0
+        },
+        {
+          "feature": "cat__Customer Type_disloyal Customer num__Cleanliness",
+          "importance": 0.011359196761179953,
+          "weight": -0.051738715496023886,
+          "direction": -1.0
+        },
+        {
+          "feature": "cat__Type of Travel_Business travel cat__Class_Business",
+          "importance": 0.010908740165949246,
+          "weight": 0.049686981899543056,
+          "direction": 1.0
+        },
+        {
+          "feature": "cat__Customer Type_Loyal Customer num__Inflight wifi service",
+          "importance": 0.01021880519608988,
+          "weight": -0.046544475447123486,
+          "direction": -1.0
+        },
+        {
+          "feature": "cat__Customer Type_Loyal Customer num__Cleanliness",
+          "importance": 0.00889999568091941,
+          "weight": 0.040537579736676585,
+          "direction": 1.0
+        },
+        {
+          "feature": "num__Inflight wifi service num__Ease of Online booking",
+          "importance": 0.008640462321405263,
+          "weight": 0.03935546070731708,
+          "direction": 1.0
+        },
+        {
+          "feature": "num__Inflight wifi service num__Inflight entertainment",
+          "importance": 0.008371639702902266,
+          "weight": -0.038131031086980266,
+          "direction": -1.0
+        },
+        {
+          "feature": "num__Seat comfort^2",
+          "importance": 0.0075489072089383585,
+          "weight": 0.03438366027111361,
+          "direction": 1.0
+        },
+        {
+          "feature": "cat__Type of Travel_Personal Travel",
+          "importance": 0.007288652002138169,
+          "weight": -0.03319825338151632,
+          "direction": -1.0
+        },
+        {
+          "feature": "cat__Type of Travel_Business travel^2",
+          "importance": 0.007288652002138156,
+          "weight": 0.03319825338151626,
+          "direction": 1.0
+        },
+        {
+          "feature": "cat__Type of Travel_Personal Travel^2",
+          "importance": 0.007288652002138149,
+          "weight": -0.03319825338151623,
+          "direction": -1.0
+        },
+        {
+          "feature": "cat__Type of Travel_Business travel",
+          "importance": 0.007288652002137866,
+          "weight": 0.03319825338151494,
+          "direction": 1.0
+        }
+      ],
+      "artifact_path": "artifacts\\models\\polynomial_regression.joblib"
+    },
+    {
+      "name": "knn",
+      "type": "KNeighborsClassifier",
+      "metrics": {
+        "train": {
+          "accuracy": 0.9453822759470281,
+          "precision": 0.9642739157109821,
+          "recall": 0.9075846751804553,
+          "f1": 0.935070878573962,
+          "roc_auc": 0.9908809747211267
+        },
+        "test": {
+          "accuracy": 0.9300508161379735,
+          "precision": 0.9480276687231258,
+          "recall": 0.8894150662106464,
+          "f1": 0.9177865254965839,
+          "roc_auc": 0.9752200076594733
+        }
+      },
+      "cv_metrics": {
+        "mean": {
+          "accuracy": 0.9278757151149444,
+          "precision": 0.947192927666034,
+          "recall": 0.8827762354247639,
+          "f1": 0.9138464117692393,
+          "roc_auc": 0.9739652659952857
+        },
+        "std": {
+          "accuracy": 0.0017530802156379066,
+          "precision": 0.0014329803391825396,
+          "recall": 0.0038202290695220397,
+          "f1": 0.002234012475776815,
+          "roc_auc": 0.0013529275799458484
+        }
+      },
+      "confusion_matrices": {
+        "train": [
+          [
+            57365,
+            1514
+          ],
+          [
+            4161,
+            40864
+          ]
+        ],
+        "test": [
+          [
+            14017,
+            556
+          ],
+          [
+            1261,
+            10142
+          ]
+        ]
+      },
+      "feature_importances": [],
+      "artifact_path": "artifacts\\models\\knn.joblib"
+    },
+    {
+      "name": "decision_tree",
+      "type": "DecisionTreeClassifier",
+      "metrics": {
+        "train": {
+          "accuracy": 0.9577109639667385,
+          "precision": 0.9606584884696492,
+          "recall": 0.9409439200444197,
+          "f1": 0.9506990103897852,
+          "roc_auc": 0.9934995642584891
+        },
+        "test": {
+          "accuracy": 0.9515706806282722,
+          "precision": 0.9514105188217495,
+          "recall": 0.9375602911514513,
+          "f1": 0.944434628975265,
+          "roc_auc": 0.9883058296792089
+        }
+      },
+      "cv_metrics": {
+        "mean": {
+          "accuracy": 0.9491742549681333,
+          "precision": 0.9475707698469517,
+          "recall": 0.9344364242087728,
+          "f1": 0.9409442258995002,
+          "roc_auc": 0.9873859455738078
+        },
+        "std": {
+          "accuracy": 0.001267901358202769,
+          "precision": 0.003405252256993583,
+          "recall": 0.00429782764419481,
+          "f1": 0.0015413673187465637,
+          "roc_auc": 0.0004896680170257866
+        }
+      },
+      "confusion_matrices": {
+        "train": [
+          [
+            57144,
+            1735
+          ],
+          [
+            2659,
+            42366
+          ]
+        ],
+        "test": [
+          [
+            14027,
+            546
+          ],
+          [
+            712,
+            10691
+          ]
+        ]
+      },
+      "feature_importances": [
+        {
+          "feature": "Online boarding",
+          "importance": 0.41612966249187644,
+          "weight": 0.41612966249187644,
+          "direction": 1.0
+        },
+        {
+          "feature": "Inflight wifi service",
+          "importance": 0.21355518586662062,
+          "weight": 0.21355518586662062,
+          "direction": 1.0
+        },
+        {
+          "feature": "Type of Travel_Personal Travel",
+          "importance": 0.14419982394715014,
+          "weight": 0.14419982394715014,
+          "direction": 1.0
+        },
+        {
+          "feature": "Inflight entertainment",
+          "importance": 0.047620139357954436,
+          "weight": 0.047620139357954436,
+          "direction": 1.0
+        },
+        {
+          "feature": "Class_Business",
+          "importance": 0.026606466412035523,
+          "weight": 0.026606466412035523,
+          "direction": 1.0
+        },
+        {
+          "feature": "Checkin service",
+          "importance": 0.025576732104411033,
+          "weight": 0.025576732104411033,
+          "direction": 1.0
+        },
+        {
+          "feature": "Customer Type_Loyal Customer",
+          "importance": 0.025300791771669048,
+          "weight": 0.025300791771669048,
+          "direction": 1.0
+        },
+        {
+          "feature": "Gate location",
+          "importance": 0.018440854172116,
+          "weight": 0.018440854172116,
+          "direction": 1.0
+        },
+        {
+          "feature": "Customer Type_disloyal Customer",
+          "importance": 0.015410389165417737,
+          "weight": 0.015410389165417737,
+          "direction": 1.0
+        },
+        {
+          "feature": "Inflight service",
+          "importance": 0.010791366779538264,
+          "weight": 0.010791366779538264,
+          "direction": 1.0
+        },
+        {
+          "feature": "Baggage handling",
+          "importance": 0.00957054667028217,
+          "weight": 0.00957054667028217,
+          "direction": 1.0
+        },
+        {
+          "feature": "Seat comfort",
+          "importance": 0.0089382016055002,
+          "weight": 0.0089382016055002,
+          "direction": 1.0
+        },
+        {
+          "feature": "Age",
+          "importance": 0.007850641272493096,
+          "weight": 0.007850641272493096,
+          "direction": 1.0
+        },
+        {
+          "feature": "Cleanliness",
+          "importance": 0.00683577415402674,
+          "weight": 0.00683577415402674,
+          "direction": 1.0
+        },
+        {
+          "feature": "Leg room service",
+          "importance": 0.005154624987864867,
+          "weight": 0.005154624987864867,
+          "direction": 1.0
+        },
+        {
+          "feature": "Type of Travel_Business travel",
+          "importance": 0.004975985852167386,
+          "weight": 0.004975985852167386,
+          "direction": 1.0
+        },
+        {
+          "feature": "Arrival Delay in Minutes",
+          "importance": 0.0033495237242183672,
+          "weight": 0.0033495237242183672,
+          "direction": 1.0
+        },
+        {
+          "feature": "Flight Distance",
+          "importance": 0.0029534286998117235,
+          "weight": 0.0029534286998117235,
+          "direction": 1.0
+        },
+        {
+          "feature": "On-board service",
+          "importance": 0.0024487152518686173,
+          "weight": 0.0024487152518686173,
+          "direction": 1.0
+        },
+        {
+          "feature": "Ease of Online booking",
+          "importance": 0.0018463762119924954,
+          "weight": 0.0018463762119924954,
+          "direction": 1.0
+        }
+      ],
+      "artifact_path": "artifacts\\models\\decision_tree.joblib"
+    },
+    {
+      "name": "svm",
+      "type": "CalibratedClassifierCV",
+      "metrics": {
+        "train": {
+          "accuracy": 0.8740953187557745,
+          "precision": 0.8677611734094729,
+          "recall": 0.8370016657412549,
+          "f1": 0.8521039184208741,
+          "roc_auc": 0.926266569958233
+        },
+        "test": {
+          "accuracy": 0.8707653218355405,
+          "precision": 0.8666605905942398,
+          "recall": 0.8339033587652372,
+          "f1": 0.8499664804469274,
+          "roc_auc": 0.9253405242187949
+        }
+      },
+      "cv_metrics": {
+        "mean": {
+          "accuracy": 0.8738931871162574,
+          "precision": 0.8675394038614039,
+          "recall": 0.8367795669072737,
+          "f1": 0.8518682910605408,
+          "roc_auc": 0.9261689721584181
+        },
+        "std": {
+          "accuracy": 0.0027261559057115735,
+          "precision": 0.00481344938845181,
+          "recall": 0.004489144352821134,
+          "f1": 0.003145701250389253,
+          "roc_auc": 0.0019463136458838886
+        }
+      },
+      "confusion_matrices": {
+        "train": [
+          [
+            53136,
+            5743
+          ],
+          [
+            7339,
+            37686
+          ]
+        ],
+        "test": [
+          [
+            13110,
+            1463
+          ],
+          [
+            1894,
+            9509
+          ]
+        ]
+      },
+      "feature_importances": [],
+      "artifact_path": "artifacts\\models\\svm.joblib"
+    }
+  ],
+  "best_model": "decision_tree",
+  "global_feature_rank": [
+    {
+      "feature": "Online boarding",
+      "importance": 0.17563884220757764,
+      "weight": 0.5615119822480599,
+      "direction": 1.0
+    },
+    {
+      "feature": "Type of Travel_Personal Travel",
+      "importance": 0.1318770634891064,
+      "weight": 0.42160692021247337,
+      "direction": 1.0
+    },
+    {
+      "feature": "Inflight wifi service",
+      "importance": 0.1021562350992416,
+      "weight": 0.3265903449863392,
+      "direction": 1.0
+    },
+    {
+      "feature": "Customer Type_disloyal Customer",
+      "importance": 0.07440860143342792,
+      "weight": 0.23788201266899126,
+      "direction": 1.0
+    },
+    {
+      "feature": "Type of Travel_Business travel",
+      "importance": 0.07276140188012634,
+      "weight": 0.2326159663052867,
+      "direction": 1.0
+    },
+    {
+      "feature": "Customer Type_Loyal Customer",
+      "importance": 0.06193531509233363,
+      "weight": 0.19800529946304796,
+      "direction": 1.0
+    },
+    {
+      "feature": "Class_Business",
+      "importance": 0.038063598350933064,
+      "weight": 0.12168815447022059,
+      "direction": 1.0
+    },
+    {
+      "feature": "Checkin service",
+      "importance": 0.029471677232396593,
+      "weight": 0.09422004663057418,
+      "direction": 1.0
+    },
+    {
+      "feature": "Class_Eco Plus",
+      "importance": 0.025974399411002092,
+      "weight": 0.08303935688517868,
+      "direction": 1.0
+    },
+    {
+      "feature": "On-board service",
+      "importance": 0.021129737382597647,
+      "weight": 0.06755112122671154,
+      "direction": 1.0
+    },
+    {
+      "feature": "Leg room service",
+      "importance": 0.020225129663755517,
+      "weight": 0.06465911814254395,
+      "direction": 1.0
+    },
+    {
+      "feature": "Ease of Online booking",
+      "importance": 0.019496860274920737,
+      "weight": 0.06233086328162937,
+      "direction": 1.0
+    },
+    {
+      "feature": "Inflight entertainment",
+      "importance": 0.019496632799206156,
+      "weight": 0.062330136048758776,
+      "direction": 1.0
+    },
+    {
+      "feature": "Class_Eco",
+      "importance": 0.01933376321286436,
+      "weight": 0.06180944698519378,
+      "direction": 1.0
+    },
+    {
+      "feature": "Arrival Delay in Minutes",
+      "importance": 0.018800687529349602,
+      "weight": 0.060105220403098396,
+      "direction": 1.0
+    },
+    {
+      "feature": "Cleanliness",
+      "importance": 0.01708456471124061,
+      "weight": 0.054618828479387954,
+      "direction": 1.0
+    },
+    {
+      "feature": "Baggage handling",
+      "importance": 0.011486251187608798,
+      "weight": 0.03672119214570345,
+      "direction": 1.0
+    },
+    {
+      "feature": "Departure/Arrival time convenient",
+      "importance": 0.01062389484146974,
+      "weight": 0.033964265401945595,
+      "direction": 1.0
+    },
+    {
+      "feature": "cat__Customer Type_Loyal Customer cat__Type of Travel_Business travel",
+      "importance": 0.00957825635214978,
+      "weight": 0.030621391277559085,
+      "direction": 1.0
+    },
+    {
+      "feature": "Departure Delay in Minutes",
+      "importance": 0.00840945836127331,
+      "weight": 0.026884780010622125,
+      "direction": 1.0
+    },
+    {
+      "feature": "Gender_Female",
+      "importance": 0.008328856049124686,
+      "weight": 0.026627096895090876,
+      "direction": 1.0
+    },
+    {
+      "feature": "num__Inflight wifi service^2",
+      "importance": 0.007853923027764295,
+      "weight": 0.025108750617540497,
+      "direction": 1.0
+    },
+    {
+      "feature": "cat__Customer Type_Loyal Customer cat__Type of Travel_Personal Travel",
+      "importance": 0.0073372787109547526,
+      "weight": 0.023457054609967953,
+      "direction": 1.0
+    },
+    {
+      "feature": "cat__Customer Type_disloyal Customer cat__Type of Travel_Business travel",
+      "importance": 0.007298393340528487,
+      "weight": 0.023332739275420837,
+      "direction": 1.0
+    },
+    {
+      "feature": "Gender_Male",
+      "importance": 0.007238111135207988,
+      "weight": 0.02314001891710856,
+      "direction": 1.0
+    }
+  ]
+}
