@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import math
+import sys
 import textwrap
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
@@ -12,9 +13,12 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
-from models.train_models import clean_frame
+PROJECT_ROOT = Path(__file__).resolve().parent
+SRC_DIR = PROJECT_ROOT / "src"
+if SRC_DIR.exists() and str(SRC_DIR) not in sys.path:
+    sys.path.insert(0, str(SRC_DIR))
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+from models.train_models import clean_frame
 REGISTRY_PATH = PROJECT_ROOT / "artifacts" / "model_registry.json"
 TRAIN_PATH = PROJECT_ROOT / "data" / "train.csv"
 MODEL_DIR = PROJECT_ROOT / "artifacts" / "models"
