@@ -983,7 +983,6 @@ with st.sidebar:
     current_model = (
         st.session_state.selected_model if st.session_state.selected_model in model_names else model_names[0]
     )
-    st.session_state.selected_model = current_model
     st.selectbox(
         translate(lang, "sidebar.model_selector"),
         model_names,
